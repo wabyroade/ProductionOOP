@@ -17,7 +17,7 @@ This program should run on any modern JRE version(6+).
 Simply copy the **Product.java**, **ItemType.java**, **Item.java** into your package src folder and create a concrete class to extend the Product class as seen below:
 
 ```java
-public class AutomotivePart extends Product {
+public class AutomotivePart extends Product { }
 ```
 
 ### Methods specified by Item interface:
