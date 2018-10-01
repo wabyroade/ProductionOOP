@@ -16,7 +16,8 @@ public abstract class Product implements Item {
   private int serialNumber;
   private Date manufacturedOn;
   private String name;
-  private static int currentProductionNumber;
+  private static int currentProductionNumber = 1;
+  private String manufacturer;
 
   //constructor for this abstract class will initialize most relevant fields
   public Product(String nameInput) {
@@ -24,6 +25,7 @@ public abstract class Product implements Item {
     serialNumber = currentProductionNumber;
     currentProductionNumber++;
     manufacturedOn = new Date();
+    this.manufacturer = Item.manufacturer;
   }
 
   public void setProductionNumber(int productionNumberInput) {
