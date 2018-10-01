@@ -18,6 +18,7 @@ public abstract class Product implements Item {
   private String name;
   private static int currentProductionNumber;
 
+  //constructor for this abstract class will initialize most relevant fields
   public Product(String nameInput) {
     name = nameInput;
     serialNumber = currentProductionNumber;

@@ -12,20 +12,8 @@ package com.wyattbyroade.productionoop;
 public class ProductionOop {
 
   public static void main(String[] args) {
-    Widget w1 = new Widget("Widget 1");
-    System.out.println(w1.toString());
-    Widget w2 = new Widget("Widget 2");
-    System.out.println(w2.toString());
-
-    for (ItemType it : ItemType.values()) {
-      System.out.println(it + " " + it.code);
-    }
+    System.out.println("Does not currently make use of the abstract class, enum or interface");
+    System.out.println("See implementation instructions in README.md or Javadoc(soon).");
   }
 }
 
-class Widget extends Product {
-
-  public Widget(String name) {
-    super(name);
-  }
-}
