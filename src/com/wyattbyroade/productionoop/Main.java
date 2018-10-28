@@ -12,7 +12,7 @@ package com.wyattbyroade.productionoop;
 
 //added a useless comment to test git command line
 // - wyatt 10/22/18
-public class ProductionOop {
+public class Main {
 
   public static void main(String[] args) {
     Widget w1 = new Widget("Widget 1");
@@ -27,7 +27,6 @@ public class ProductionOop {
 }
 
 class Widget extends Product {
-
   Widget(String name) {
     super(name);
   }
