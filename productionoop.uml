@@ -3,19 +3,53 @@
   <ID>JAVA</ID>
   <OriginalElement>com.wyattbyroade.productionoop</OriginalElement>
   <nodes>
-    <node x="0.0" y="79.0">com.wyattbyroade.productionoop.Product</node>
-    <node x="135.0" y="0.0">com.wyattbyroade.productionoop.ProductionOop</node>
-    <node x="0.0" y="153.0">com.wyattbyroade.productionoop.ItemType</node>
-    <node x="9.0" y="0.0">com.wyattbyroade.productionoop.Item</node>
+    <node x="152.25" y="158.0">com.wyattbyroade.productionoop.MoviePlayer</node>
+    <node x="6.0" y="79.0">com.wyattbyroade.productionoop.Product</node>
+    <node x="343.0" y="79.0">com.wyattbyroade.productionoop.Screen</node>
+    <node x="283.0" y="157.0">com.wyattbyroade.productionoop.MoviePlayerDriver</node>
+    <node x="-140.0" y="234.0">com.wyattbyroade.productionoop.ItemType</node>
+    <node x="-170.0" y="158.0">com.wyattbyroade.productionoop.AudioPlayerDriver</node>
+    <node x="187.0" y="-29.0">com.wyattbyroade.productionoop.Main</node>
+    <node x="123.0" y="79.0">com.wyattbyroade.productionoop.MultimediaControl</node>
+    <node x="457.0" y="77.0">com.wyattbyroade.productionoop.ScreenDriver</node>
+    <node x="77.0" y="224.0">com.wyattbyroade.productionoop.PlayerDriver</node>
+    <node x="0.0" y="158.0">com.wyattbyroade.productionoop.AudioPlayer</node>
+    <node x="17.5" y="0.0">com.wyattbyroade.productionoop.Item</node>
+    <node x="252.0" y="222.0">com.wyattbyroade.productionoop.MonitorType</node>
+    <node x="329.0" y="2.0">com.wyattbyroade.productionoop.ScreenSpec</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="com.wyattbyroade.productionoop.MoviePlayer" target="com.wyattbyroade.productionoop.Product">
+      <point x="-30.25" y="-14.5" />
+      <point x="182.5" y="128.0" />
+      <point x="78.75" y="128.0" />
+      <point x="24.25" y="14.5" />
+    </edge>
+    <edge source="com.wyattbyroade.productionoop.AudioPlayer" target="com.wyattbyroade.productionoop.Product">
+      <point x="-30.25" y="-14.5" />
+      <point x="-24.25" y="14.5" />
+    </edge>
+    <edge source="com.wyattbyroade.productionoop.Screen" target="com.wyattbyroade.productionoop.ScreenSpec">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
     <edge source="com.wyattbyroade.productionoop.Product" target="com.wyattbyroade.productionoop.Item">
       <point x="0.0" y="-14.5" />
       <point x="0.0" y="14.5" />
     </edge>
+    <edge source="com.wyattbyroade.productionoop.MoviePlayer" target="com.wyattbyroade.productionoop.MultimediaControl">
+      <point x="30.25" y="-14.5" />
+      <point x="40.0" y="14.5" />
+    </edge>
+    <edge source="com.wyattbyroade.productionoop.AudioPlayer" target="com.wyattbyroade.productionoop.MultimediaControl">
+      <point x="30.25" y="-14.5" />
+      <point x="90.75" y="138.0" />
+      <point x="163.0" y="138.0" />
+      <point x="-40.0" y="14.5" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="132.5" y="91.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="231.5" y="166.0" />
   <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>

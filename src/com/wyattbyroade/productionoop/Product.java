@@ -1,5 +1,6 @@
 package com.wyattbyroade.productionoop;
 
+import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Date;
  * @version 1.0
  * @since   2018-09-29
  */
-public abstract class Product implements Item {
+public abstract class Product implements Item, Comparable<Product> {
 
   private int serialNumber;
   private Date manufacturedOn;
@@ -52,11 +53,15 @@ public abstract class Product implements Item {
     return serialNumber;
   }
 
+  public int compareTo(Product compProduct) {
+    return this.name.compareTo(compProduct.getName());
+  }
+
   public String toString() {
     return "Manufacturer : " + manufacturer + "\n"
         + "Serial Number : " + serialNumber + "\n"
         + "Date : " + manufacturedOn + "\n"
-        + "Name : " + name + "\n";
+        + "Name : " + name;
   }
 
 }

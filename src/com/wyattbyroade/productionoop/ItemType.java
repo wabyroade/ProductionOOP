@@ -9,10 +9,10 @@ package com.wyattbyroade.productionoop;
  * @since   2018-09-29
  */
 public enum ItemType {
-  Audio("AU"),
-  Visual("VI"),
-  AudioMobile("AM"),
-  VisualMobile("VM");
+  AUDIO("AU"),
+  VISUAL("VI"),
+  AUDIO_MOBILE("AM"),
+  VISUAL_MOBILE("VM");
 
   String code;
 

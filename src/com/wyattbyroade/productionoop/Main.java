@@ -1,33 +1,42 @@
 package com.wyattbyroade.productionoop;
 
-/**
-* The Production OOP program is a mock manufacturing management
-* application that makes use of several tenets of object oriented
-* design and programming.
-*
-* @author  Wyatt Byroade
-* @version 1.0
-* @since   2018-09-29
-*/
+import java.util.ArrayList;
+import java.util.Collections;
 
-//added a useless comment to test git command line
-// - wyatt 10/22/18
 public class Main {
 
   public static void main(String[] args) {
-    Widget w1 = new Widget("Widget 1");
-    System.out.println(w1.toString());
-    Widget w2 = new Widget("Widget 2");
-    System.out.println(w2.toString());
 
-    for (ItemType it : ItemType.values()) {
-      System.out.println(it + " " + it.code);
+    ArrayList<Product> products;
+
+    products = testCollection();
+
+    Collections.sort(products);
+
+    print(products);
+  }
+
+  private static ArrayList<Product> testCollection() {
+    ArrayList<Product> products = new ArrayList<>();
+
+    AudioPlayer a1 = new AudioPlayer("iPod Mini","MP3");
+    AudioPlayer a2 = new AudioPlayer("Walkman","WAV ");
+    MoviePlayer m1 = new MoviePlayer("DBPOWER MK101",
+            new Screen(" 720x480", 40, 22), MonitorType.LCD);
+    MoviePlayer m2 = new MoviePlayer("Pyle PDV156BK",
+            new Screen("1366x768", 40, 22), MonitorType.LED);
+
+    products.add(a1);
+    products.add(a2);
+    products.add(m1);
+    products.add(m2);
+    return products;
+  }
+
+  private static void print(ArrayList<Product> inputArrayList) {
+    for (Product thisProduct : inputArrayList) {
+      System.out.println(thisProduct);
     }
   }
 }
 
-class Widget extends Product {
-  Widget(String name) {
-    super(name);
-  }
-}
