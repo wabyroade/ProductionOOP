@@ -3,8 +3,22 @@ package com.wyattbyroade.productionoop;
 import java.util.ArrayList;
 import java.util.Collections;
 
+ /**
+ * The Main class serves as the driver for the rest of the classes in the package.
+ *
+ * @author      Wyatt Byroade
+ * @version     0.8 Beta
+ */
 public class Main {
 
+   /**
+   * The main method to run upon execution of the application to test various output.
+   * <p>
+   * this code includes source code from Repl.it for JPP 16 by prof. Scott Vanselow.
+   * </p>
+   *
+   * @param  args  String array, not used in this version.
+   */
   public static void main(String[] args) {
 
     ArrayList<Product> products;
@@ -16,6 +30,11 @@ public class Main {
     print(products);
   }
 
+   /**
+    * The testCollection method instantiates objects of multiple types that are derived from Product.
+    *
+    * @return  ArrayList&lt;Product&gt; containing the test objects instantiated
+    */
   private static ArrayList<Product> testCollection() {
     ArrayList<Product> products = new ArrayList<>();
 
@@ -33,6 +52,11 @@ public class Main {
     return products;
   }
 
+   /**
+    * The print method loops through ArrayList passed to it and prints the String representation of each to the console.
+    *
+    * @param  inputArrayList  ArrayList&lt;Product&gt; all objects of classes derived from Product
+    */
   private static void print(ArrayList<Product> inputArrayList) {
     for (Product thisProduct : inputArrayList) {
       System.out.println(thisProduct);

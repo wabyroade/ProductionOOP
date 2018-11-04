@@ -9,8 +9,7 @@ import java.util.Date;
  * the Product class will expose familiar methods to the rest of the program.
  *
  * @author  Wyatt Byroade
- * @version 1.0
- * @since   2018-09-29
+ * @version 0.8 Beta
  */
 public abstract class Product implements Item, Comparable<Product> {
 
@@ -20,7 +19,12 @@ public abstract class Product implements Item, Comparable<Product> {
   private static int currentProductionNumber = 1;
   private String manufacturer;
 
-  //constructor for this abstract class will initialize most relevant fields
+  /**
+   * Instantiates a new Product object.
+   *
+   * @param nameInput - the name of the product being instantiated
+   */
+//constructor for this abstract class will initialize most relevant fields
   public Product(String nameInput) {
     name = nameInput;
     serialNumber = currentProductionNumber;
@@ -29,34 +33,69 @@ public abstract class Product implements Item, Comparable<Product> {
     this.manufacturer = Item.manufacturer;
   }
 
+  /**
+   * The setProductionNumber method is used to update the static field currentProductionNumber.
+   *
+   * @param productionNumberInput - the number that will be used as serial number of next Product created.
+   */
   public void setProductionNumber(int productionNumberInput) {
     currentProductionNumber = productionNumberInput;
   }
 
+  /**
+   * The setName method is used to update the name field of an object inherited from Product.
+   *
+   * @param nameInput - the number that will be used as serial number of next Product created.
+   */
   @Override
   public void setName(String nameInput) {
     name = nameInput;
   }
 
+  /**
+   * The getName method is used to return name of the object to calling method.
+   *
+   * @return String name
+   */
   @Override
   public String getName() {
     return name;
   }
 
+  /**
+   * The getManufactureDate method is used to return manufacturedOn field to calling method.
+   *
+   * @return String name
+   */
   @Override
   public Date getManufactureDate() {
     return manufacturedOn;
   }
 
+  /**
+   * The getSerialNumber method is used to return manufacturedOn field to calling method.
+   *
+   * @return String name
+   */
   @Override
   public int getSerialNumber() {
     return serialNumber;
   }
 
+  /**
+   * The compareTo method is implemented as required by Comparable&lt;&gt; interface to allow sorting of Product objects.
+   *
+   * @return int returns result of String-based compareTo method run on the name fields of two objects.
+   */
   public int compareTo(Product compProduct) {
     return this.name.compareTo(compProduct.getName());
   }
 
+  /**
+   * Returns String representation of a Product object
+   *
+   * @return String representation of super class as well as MonitorType to console
+   */
   public String toString() {
     return "Manufacturer : " + manufacturer + "\n"
         + "Serial Number : " + serialNumber + "\n"

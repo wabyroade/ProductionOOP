@@ -7,8 +7,7 @@ import java.util.Date;
  * item, contained by any classes that implement it.
  *
  * @author Wyatt Byroade
- * @version 1.0
- * @since 2018-09-29
+ * @version 0.8 Beta
  */
 public interface Item {
 

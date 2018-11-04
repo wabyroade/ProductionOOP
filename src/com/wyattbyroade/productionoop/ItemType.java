@@ -5,8 +5,7 @@ package com.wyattbyroade.productionoop;
  * by four specific descriptions and codes.
  *
  * @author  Wyatt Byroade
- * @version 1.0
- * @since   2018-09-29
+ * @version 0.8 Beta
  */
 public enum ItemType {
   AUDIO("AU"),

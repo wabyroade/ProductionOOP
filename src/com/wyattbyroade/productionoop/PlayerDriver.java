@@ -2,7 +2,16 @@ package com.wyattbyroade.productionoop;
 
 import java.util.ArrayList;
 
+/**
+ * The class PlayerDriver serves as driver class for AudioPlayer and MoviePlayer classes.
+ *
+ * @author  Wyatt Byroade
+ * @version 0.8 Beta
+ */
 public class PlayerDriver {
+  /**
+   * The testPlayerControls method loops through an ArrayList to test the controls implemented in MultimediaControl interface.
+   */
   public static void testPlayerControls() {
     ArrayList<MultimediaControl> controlledDevList;
     controlledDevList = new ArrayList<>();

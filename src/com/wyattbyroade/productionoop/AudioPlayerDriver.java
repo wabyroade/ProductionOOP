@@ -1,5 +1,11 @@
 package com.wyattbyroade.productionoop;
 
+/**
+ * The AudioPlayerDriver class is used to instantiate and test AudioPlayer objects.
+ *
+ * @author  Wyatt Byroade
+ * @version 0.8 Beta
+ */
 public class AudioPlayerDriver {
 
   public static void testAudioPlayer() {
