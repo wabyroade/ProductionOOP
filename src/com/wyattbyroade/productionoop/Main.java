@@ -21,13 +21,16 @@ public class Main {
    */
   public static void main(String[] args) {
 
-    ArrayList<Product> products;
+//    ArrayList<Product> products;
 
-    products = testCollection();
+//    products = testCollection();
 
-    Collections.sort(products);
+//   Collections.sort(products);
 
-    print(products);
+//    Product.printType(MoviePlayer.class,products);
+//    print(products);
+//    EmployeeInfo myInfo = new EmployeeInfo();
+    TestProductionLine.testProductionLine();
   }
 
    /**

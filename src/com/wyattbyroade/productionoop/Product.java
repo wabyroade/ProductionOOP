@@ -19,6 +19,7 @@ public abstract class Product implements Item, Comparable<Product> {
   private static int currentProductionNumber = 1;
   private String manufacturer;
 
+
   /**
    * Instantiates a new Product object.
    *
@@ -89,6 +90,15 @@ public abstract class Product implements Item, Comparable<Product> {
    */
   public int compareTo(Product compProduct) {
     return this.name.compareTo(compProduct.getName());
+  }
+
+
+  public static void printType(Class<?> thisClass, Collection thisCollection) {
+    for(Object thisObj : thisCollection) {
+      if (thisObj.getClass().equals(thisClass)) {
+        System.out.println(thisObj);
+      }
+    }
   }
 
   /**
