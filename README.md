@@ -38,37 +38,25 @@ cd [repository_root]/out/production/ProductionOOP
 ```
 java com.wyattbyroade.productionoop.Main
 ```
+Modification of ProcessFiles.java may be necessary to account for different platforms.
+#### Upon running, the user will be prompted to enter their full name and department Id:
+(Follow specifications in JPP document)
 
-### Expected output with default test driver:
+Please enter your first and last name: 
+Please enter the department ID: 
+
+
+#### Upon entering employee information, the user will be presented with a menu that will guide the user through
+#### product creation and viewing
 ```
-Manufacturer : OracleProduction
-Serial Number : 3
-Date : Sun Nov 04 10:24:39 EST 2018
-Name : DBPOWER MK101
-Resolution :  720x480
-Refresh Rate : 40
-Response Time : 22
-Monitor Type : LCD
-Manufacturer : OracleProduction
-Serial Number : 4
-Date : Sun Nov 04 10:24:39 EST 2018
-Name : Pyle PDV156BK
-Resolution : 1366x768
-Refresh Rate : 40
-Response Time : 22
-Monitor Type : LED
-Manufacturer : OracleProduction
-Serial Number : 2
-Date : Sun Nov 04 10:24:39 EST 2018
-Name : Walkman
-Audio Spec : WAV
-Type : AUDIO
-Manufacturer : OracleProduction
-Serial Number : 1
-Date : Sun Nov 04 10:24:39 EST 2018
-Name : iPod Mini
-Audio Spec : MP3
-Type : AUDIO
+Root Menu: 
+What would you like to do?:
+1-Add New Product
+2-Display Previous Products
+3-Display Production Statistics
+4-Display Production Log
+5-Exit
+
 ```
 <br><br>
 ## Application Design
@@ -107,3 +95,4 @@ Type : AUDIO
 * **Polymorphism** - The above-mentioned abstract class and interfaces allow the objects to be handled with the same data types and methods.
 * **Generics** - Certain data storage types and methods have been designed to work with different types of objects.
 * **Enum types** - The ItemType and MonitorType enums are reference types used to define a set of constants for the types of objects and utilize them.
+* **File and folder operations** - Using java.nio.file modules to create, append and read files and folders
