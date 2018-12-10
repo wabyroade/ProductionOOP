@@ -93,12 +93,36 @@ public abstract class Product implements Item, Comparable<Product> {
   }
 
 
+  /**
+   * The printType method loops through an ArrayList<Product> and prints each object that match the specified class
+   *
+   * @param thisClass - the class of objects to print
+   * @param thisCollection - the collection of product objects to loop through
+   */
   public static void printType(Class<?> thisClass, Collection thisCollection) {
     for(Object thisObj : thisCollection) {
       if (thisObj.getClass().equals(thisClass)) {
         System.out.println(thisObj);
       }
     }
+  }
+
+  /**
+   * The countType method loops through an ArrayList<Product> and counts each object that match the specified class
+   *
+   * @param thisClass - the class of objects to print
+   * @param thisCollection - the collection of product objects to loop through
+   *
+   * @return totalCount  integer count of matching objects
+   */
+  static int countType(Class<?> thisClass, Collection thisCollection) {
+    int count = 0;
+    for(Object thisObj : thisCollection) {
+      if (thisObj.getClass().equals(thisClass)) {
+        count++;
+      }
+    }
+    return count;
   }
 
   /**

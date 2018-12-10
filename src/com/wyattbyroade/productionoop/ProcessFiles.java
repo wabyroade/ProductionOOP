@@ -1,64 +1,87 @@
 package com.wyattbyroade.productionoop;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-//OraclProduction Ltd now wants to store the results of the tests and who carried out that test to a file for archiving
-//        purposes. To achieve this create a new class named ProcessFiles that will create a directory and file structure
-//        by combining the path and file name. It will have to save both the products and the employee information to file
-//        so create two methods that override each other that accept either the employee object or products arraylist.
-//
-//        The directory and file should be created when the object is created.
-//
-//        For both the file and directory if they do not exist then create them. The directory should be created at the
-// of the C drive and be named LineTests(p). The file should be named TestResults.txt(p2) and
-//
-//        should be created within the LineTests directory. The p3 field should be used to store the resolved path combining p and p2.
-//
-//        Update the TestProductionLine class to use the WriteFile() methods to save the product information to file
-// followed by the employee information. This information should be appended so that no historical information is lost in this process.
-//
-//        Test the file output to ensure that it is formatted the same as the console output.
-public class ProcessFiles {
-        private Path p;
-        private Path p2;
-        private Path p3;
 
-        public ProcessFiles() {
-          p = Paths.get("Users/NONAME/LineTests");
-          CreateDirectory();
-        }
-//        Path path = Paths.get("C:\\Directory2\\Sub2\\Sub-Sub2");
-//        //if directory exists?
-//        if (!Files.exists(path)) {
-//                try {
-//                        Files.createDirectories(path);
-//                } catch (IOException e) {
-//                        //fail to create directory
-//                        e.printStackTrace();
-//                }
-//        }
+/**
+ * The class ProcessFiles is used to output production data to log file rather than console
+ *
+ * @author  Wyatt Byroade
+ * @version 0.8 Beta
+ */
+class ProcessFiles {
+  private Path p;
+  private Path p2;
+  private Path p3;
+
+  /**
+   * Instantiates a new ProcessFiles object, which also creates log folder if it doesn't currently exist.
+   */
+  ProcessFiles() {
+    // Uncomment and/or modify one of the following three lines depending on test environment
+    p = Paths.get("/Users/NONAME/LineTests"); // Absolute path for MacOS
+    //p = Paths.get("LineTests"); // More versatile relative path to output data in project folder - PROBABLY IDEAL
+    //p = Paths.get("C:\\LineTests"); // Absolute path for MS Windows
 
 
-        private void CreateDirectory() {
-          if (!Files.exists(p)) {
-            try {
-              Files.createDirectories(p);
-            }
-            catch (Exception e) {
-              System.err.println(e.getStackTrace());
-            }
-          }
-        }
+    p2 = Paths.get("TestResults.txt");
+    p3 = p.resolve(p2);
+    CreateDirectory();
+  }
 
-        public void WriteFile(EmployeeInfo emp) throws IOException {
+  /**
+   * Create directory where log file will be stored
+   */
+  private void CreateDirectory() {
+    if (!Files.exists(p)) {
+      try {
+        Files.createDirectories(p);
+      } catch (Exception e) {
+        System.err.println("Unable to create directory. Is correct filesystem set?");
+        e.printStackTrace();
+      }
+    }
+  }
 
-        }
-        public void WriteFile(ArrayList<Product> products) throws IOException {
+  /**
+   * write toString() data from an employee object to log file
+   *
+   * @param emp   EmployeeInfo object of the employee data to be written
+   */
+  void WriteFile(EmployeeInfo emp) throws IOException {
+    File appendFile = new File(p3.toString());
+    FileWriter appendDataObj = new FileWriter(appendFile, true);
+    appendDataObj.write(emp.toString() + "\n");
+    appendDataObj.close();
+  }
 
-        }
+  /**
+   * Write toString() data from each object in an ArrayList<Product> list
+   *
+   * @param products ArrayList<Product> containing one to many objects of various Product types
+   */
+  void WriteFile(ArrayList<Product> products) throws IOException {
+    File appendFile = new File(p3.toString());
+    FileWriter appendDataObj = new FileWriter(appendFile, true);
+    for (Product p : products) {
+      appendDataObj.append(p.toString());
+      appendDataObj.append("\n");
+    }
+    appendDataObj.close();
+  }
 
+  /**
+   * Getter method for p3 (full file path) field; not in specification but used to make viewing that data easier
+   *
+   * @return Path full path of data log file
+   */
+  Path getDataFilePath() {
+    return p3;
+  }
 }
